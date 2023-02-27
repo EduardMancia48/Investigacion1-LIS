@@ -1,6 +1,9 @@
 <?php 
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
 
 ?>
 <table>
@@ -20,5 +23,10 @@ session_start();
     echo "<td>" . $producto['precio'] * $producto['cantidad'] . "</td>";
     echo "</tr>";
   }
+
+
+
+
+  
   ?>
 </table>
